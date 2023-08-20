@@ -4,14 +4,14 @@
 # SCRIPT : DOWNLOAD AND INSTALL MAC CHANGER PLUGIN
 # ###########################################
 #
-# Command: wget https://raw.githubusercontent.com/soomarali/MAC/main/Openpli%20py3/isntaller.sh -qO - | /bin/sh
+# Command: wget https://raw.githubusercontent.com/soomarali/MAC-Changer/main/Mac_Plugin/installer.sh -qO - | /bin/sh
 #
 # ###########################################
 
 ###########################################
 # List of file URLs to download
 urls=(
-    "https://raw.githubusercontent.com/soomarali/DOWNLOADS/main/Openpli%20py3/CinoDream_AShawky.tar.gz"
+    "https://raw.githubusercontent.com/soomarali/MAC-Changer/main/Mac_Plugin/MAC.tar.gz"
     
     # Add more URLs for the remaining files
 )
