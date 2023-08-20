@@ -12,27 +12,15 @@
 # List of file URLs to download
 urls=(
     "https://raw.githubusercontent.com/soomarali/DOWNLOADS/main/Openpli%20py3/CinoDream_AShawky.tar.gz"
-    "https://raw.githubusercontent.com/soomarali/DOWNLOADS/main/Openpli%20py3/dmm_Ashawky.tar.gz"
-    "https://raw.githubusercontent.com/soomarali/DOWNLOADS/main/Openpli%20py3/EkselanceXE_Ashawky.tar.gz"
-    "https://raw.githubusercontent.com/soomarali/DOWNLOADS/main/Openpli%20py3/ExtremeFHD.tar.gz"
-    "https://raw.githubusercontent.com/soomarali/DOWNLOADS/main/Openpli%20py3/HDLine-Super_AShawky.tar.gz"
-    "https://raw.githubusercontent.com/soomarali/DOWNLOADS/main/Openpli%20py3/Karonte_AShawky.tar.gz"
-    "https://raw.githubusercontent.com/soomarali/DOWNLOADS/main/Openpli%20py3/MetriXconfluenc_Ashawky.tar.gz"
-    "https://raw.githubusercontent.com/soomarali/DOWNLOADS/main/Openpli%20py3/MX_Graphite_AShawky.tar.gz"
-    "https://raw.githubusercontent.com/soomarali/DOWNLOADS/main/Openpli%20py3/NAGA_CLBS-FHD.tar.gz"
-    "https://raw.githubusercontent.com/soomarali/DOWNLOADS/main/Openpli%20py3/OctagonBlackFHD.tar.gz"
-    "https://raw.githubusercontent.com/soomarali/DOWNLOADS/main/Openpli%20py3/OctagonFHD.tar.gz"
-    "https://raw.githubusercontent.com/soomarali/DOWNLOADS/main/Openpli%20py3/oZeta-FHD.tar.gz"
-    "https://raw.githubusercontent.com/soomarali/DOWNLOADS/main/Openpli%20py3/PLi-FullNightHD-Ashawky.tar.gz"
     
     # Add more URLs for the remaining files
 )
 
 # Destination directory to save the downloaded files
-destination="/tmp/skins"
+destination="/tmp/MAC"
 
 # Create the destination directory if it doesn't exist
-mkdir -p "$skins"
+mkdir -p "$MAC"
 
 # Variable to track the completion status
 completed=false
@@ -69,7 +57,7 @@ clear
 echo ""
 echo "***********************************************************************"
 echo "**                                                                    *"
-echo "**                       Skins       : openpli py3                    *"
+echo "**                       MAC CHANGER : PLUGIN                         *"
 echo "**                       Uploaded by : ASGHAR ALI                     *"
 echo "**                       Develop FOR : DREAMWORLD                     *"
 echo "**                       Support     : 03357300604                    *"
