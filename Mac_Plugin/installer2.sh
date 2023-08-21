@@ -1,3 +1,35 @@
+
+#!/bin/bash
+
+# Get Python version
+python_version=$(python -c "import sys; print(sys.version_info[0])")
+
+if [ "$python_version" -eq 2 ]; then
+    echo "You have Python version 2."
+    echo "Deciding to use files with 2 variables for Python 2."
+    file1="file1_v2.py"
+    file2="file2_v2.py"
+else
+    echo "You have Python version 3."
+    echo "Using files with the same variables for Python 3."
+    file1="file1_v3.py"
+    file2="file2_v3.py"
+fi
+
+# Display Python version again
+echo "Python version: $python_version"
+
+# Define variables
+variable1="some_value"
+variable2="another_value"
+
+# Execute files with chosen variables
+python "$file1" "$variable1" "$variable2"
+python "$file2" "$variable1" "$variable2"
+
+
+
+
 up#!/bin/sh
 
 # ==============================================
