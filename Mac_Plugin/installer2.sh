@@ -32,7 +32,7 @@ if [ "$python_version" -lt 3 ]; then
 else
     echo "Python version: $python_version"
     sleep 4
-    MY_IPK="enigma2-plugin-extensions-plugin_v1.0_py3.ipk.ipk"
+    MY_IPK="enigma2-plugin-extensions-plugin_v1.0_py3.ipk"
     MY_DEB="enigma2-plugin-extensions-plugin_v1.0_p3.deb"
 fi
 
