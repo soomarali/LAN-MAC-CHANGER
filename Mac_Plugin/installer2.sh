@@ -1,4 +1,4 @@
-#!/bin/sh
+up#!/bin/sh
 
 # ==============================================
 # SCRIPT : DOWNLOAD AND INSTALL MAC Changer plugin #
@@ -15,7 +15,7 @@ PACKAGE_DIR='MAC-Changer/main/Mac_Plugin'
 MY_IPK="enigma2-plugin-extensions-MAC-plugin_v1.0_all.ipk"
 MY_IPK2="enigma2-plugin-extensions-MAC-plugin_v1.0_py3.ipk"
 MY_DEB="enigma2-plugin-extensions-MAC-plugin_v1.0_all.deb"
-MY_DEB2="enigma2-plugin-extensions-MAC-plugin_v1.0_py3.deb"
+MY_DEB2="enigma2-plugin-extensions-MAC-plugin_v1.0_p3.deb"
 
 ########################################################################################################################
 # Auto ... Do not change
