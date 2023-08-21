@@ -1,68 +1,100 @@
-#!/bin/bash
+#!/bin/sh
 
-# ###########################################
-# SCRIPT : DOWNLOAD AND INSTALL MAC CHANGER PLUGIN
-# ###########################################
-#
-# Command: wget https://raw.githubusercontent.com/soomarali/MAC-Changer/main/Mac_Plugin/installer.sh -qO - | /bin/sh
-#
-# ###########################################
+# ==============================================
+# SCRIPT : DOWNLOAD AND INSTALL OSCam SmartCam #
+# =====================================================================================================================
+# Command: wget https://raw.githubusercontent.com/soomarali/Download/main/SmartCam/installer.sh -qO - | /bin/sh #
+# =====================================================================================================================
 
-###########################################
-# List of file URLs to download
-urls=(
-    "https://raw.githubusercontent.com/soomarali/MAC-Changer/main/Mac_Plugin/MAC.tar.gz"
-    
-    # Add more URLs for the remaining files
-)
+########################################################################################################################
+# Plugin	... Enter Manually
+########################################################################################################################
 
-# Destination directory to save the downloaded files
-destination="/tmp/MAC"
+PACKAGE_DIR='MAC-Changer/Mac_Plugin'
 
-# Create the destination directory if it doesn't exist
-mkdir -p "$MAC"
+MY_IPK="enigma2-plugin-extensions-MAC-plugin_v1.0_all.ipk.ipk"
+MY_DEB="enigma2-plugin-extensions-MAC-plugin_v1.0_all.deb"
 
-# Variable to track the completion status
-completed=false
+########################################################################################################################
+# Auto ... Do not change
+########################################################################################################################
 
-# Iterate over the URLs and download each file
-for url in "${urls[@]}"; do
-    filename=$(basename "$url")
-    wget -P "$destination" "$url"
-
- echo "MAC CHANGER PLUGIN MADE BY ASGHAR ALI"
- echo "FOR DREAMWORLD & ENIGMA2 LOVERS"
- echo "SUPPORT: 03357300604"
- echo "file Downloaded now Extracting: $filename"
-
-    # Extract the downloaded file
-    tar -xzvf "$destination/$filename" -C "/"
-
-    # Remove the downloaded tar.gz file
-    rm "$destination/$filename"
-# Check if all files have been processed
-    if [[ "$filename" == "${urls[-1]}" ]]; then
-        completed=true
-        break
-    fi
-done
-# Display message based on completion status
-if "$completed"; then
-    echo "PLUGIN downloaded and INSTALLED successfully."
+# Decide : which package ?
+MY_MAIN_URL="https://raw.githubusercontent.com/soomarali/"
+if which dpkg > /dev/null 2>&1; then
+	MY_FILE=$MY_DEB
+	MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_DEB
 else
-    echo "Script execution incomplete."
+	MY_FILE=$MY_IPK
+	MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_IPK
 fi
-sleep2
-clear
-echo ""
-echo "***********************************************************************"
-echo "**                                                                    *"
-echo "**                       MAC CHANGER : PLUGIN                         *"
-echo "**                       Uploaded by : ASGHAR ALI                     *"
-echo "**                       Develop FOR : DREAMWORLD                     *"
-echo "**                       Support     : 03357300604                    *"
-echo "**                                                                    *"
-echo "***********************************************************************"
-echo ""
-killall -9 enigma2
-exit 0
+MY_TMP_FILE="/tmp/"$MY_FILE
+
+echo ''
+echo '************************************************************'
+echo '**                         STARTED                        **'
+echo '************************************************************'
+echo "**                 Uploaded by : ASGHAR ALI                **"
+echo "**                 Devolped For: DREAMWORLD                **"
+echo "**                 SUPPORT     : 03357300604               **"
+echo "************************************************************"
+echo ''
+
+# Remove previous file (if any)
+rm -f $MY_TMP_FILE > /dev/null 2>&1
+
+# Download package file
+MY_SEP='============================================================='
+echo $MY_SEP
+echo 'Downloading '$MY_FILE' ...'
+echo $MY_SEP
+echo ''
+wget -T 2 $MY_URL -P "/tmp/"
+
+# Check download
+if [ -f $MY_TMP_FILE ]; then
+	# Install
+	echo ''
+	echo $MY_SEP
+	echo 'Installation started'
+	echo $MY_SEP
+	echo ''
+	if which dpkg > /dev/null 2>&1; then
+		dpkg -i --force-overwrite $MY_TMP_FILE
+		apt install -f -y
+	else
+		opkg install --force-reinstall $MY_TMP_FILE	
+	fi
+	MY_RESULT=$?
+
+	# Result
+	echo ''
+	echo ''
+	if [ $MY_RESULT -eq 0 ]; then
+		echo "   >>>>   SUCCESSFULLY INSTALLED   <<<<"
+		echo ''
+		echo "   >>>>         RESTARING         <<<<"
+		if which systemctl > /dev/null 2>&1; then
+			sleep 2; systemctl restart enigma2
+		else
+			init 4; sleep 4; init 3;
+		fi
+	else
+		echo "   >>>>   INSTALLATION FAILED !   <<<<"
+	fi;
+	echo ''
+	echo '**************************************************'
+	echo '**                   FINISHED                   **'
+	echo '**	Uploaded BY : ASGHAR ALI	      **'
+ 	echo '**	Devolped For: DREAMWORLD 	      **'
+  	echo '**	SUPPORT     : 03357300604	      **'  
+ 	echo '**************************************************'
+	echo ''
+	exit 0
+else
+	echo ''
+	echo "Download failed !"
+	exit 1
+fi
+
+# ------------------------------------------------------------------------------------------------------------
