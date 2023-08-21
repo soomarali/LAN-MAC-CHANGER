@@ -23,15 +23,15 @@ PACKAGE_DIR='MAC-Changer/main/Mac_Plugin'
 # Get Python version
 python_version=$(python -c 'import sys; print(sys.version_info.major)')
 echo "Detected Python version: $python_version"
-sleep 4
+sleep 2
 if [ "$python_version" -lt 3 ]; then
     echo "Python version: $python_version"
-    sleep 4
+    sleep 2
     MY_IPK="enigma2-plugin-extensions-MAC-plugin_v1.0_all.ipk"
     MY_DEB="enigma2-plugin-extensions-MAC-plugin_v1.0_all.deb"
 else
     echo "Python version: $python_version"
-    sleep 4
+    sleep 2
     MY_IPK="enigma2-plugin-extensions-plugin_v1.0_py3.ipk"
     MY_DEB="enigma2-plugin-extensions-plugin_v1.0_p3.deb"
 fi
