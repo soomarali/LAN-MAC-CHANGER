@@ -21,10 +21,6 @@ MY_DEB="enigma2-plugin-extensions-MAC-plugin_v1.0_all.deb"
 
 # Decide : which package ?
 MY_MAIN_URL="https://raw.githubusercontent.com/soomarali/"
-import sys
-python_version = sys.version
-print("Python version:", python_version)
-
 if which dpkg > /dev/null 2>&1; then
 	MY_FILE=$MY_DEB
 	MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_DEB
