@@ -21,9 +21,10 @@ PACKAGE_DIR='MAC-Changer/main/Mac_Plugin'
 # Auto ... Do not change
 ########################################################################################################################
 # Get Python version
-python_version=$(python -c "import sys; print(sys.version_info[0])")
-
-if [ "$python_version" -eq 2 ]; then
+python_version=$(python -c 'import sys; print(sys.version_info.major)')
+echo "Detected Python version: $python_version"
+sleep 4
+if [ "$python_version" -lt 3 ]; then
     echo "Python version: $python_version"
     sleep 4
     MY_IPK="enigma2-plugin-extensions-MAC-plugin_v1.0_all.ipk"
@@ -33,7 +34,12 @@ else
     sleep 4
     MY_IPK="enigma2-plugin-extensions-MAC-plugin_v1.0_py3.ipk"
     MY_DEB="enigma2-plugin-extensions-MAC-plugin_v1.0_p3.deb"
+fi
 
+# Display selected files
+echo "Selected files: $MY_IPK, $MY_DEB"
+
+sleep 4
 # Decide : which package ?
 MY_MAIN_URL="https://raw.githubusercontent.com/soomarali/"
 if which dpkg > /dev/null 2>&1; then
