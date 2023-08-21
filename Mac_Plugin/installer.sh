@@ -3,7 +3,7 @@
 # ==============================================
 # SCRIPT : DOWNLOAD AND INSTALL MAC Changer plugin #
 # =====================================================================================================================
-# Command: wget https://raw.githubusercontent.com/soomarali/MAC-Changer/Mac_Plugin/installer.sh -qO - | /bin/sh #
+# Command: wget https://raw.githubusercontent.com/soomarali/MAC-Changer/main/Mac_Plugin/installer.sh -qO - | /bin/sh #
 # =====================================================================================================================
 
 ########################################################################################################################
