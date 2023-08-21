@@ -12,7 +12,7 @@
 
 PACKAGE_DIR='MAC-Changer/main/Mac_Plugin'
 
-MY_IPK="enigma2-plugin-extensions-MAC-plugin_v1.0_all.ipk.ipk"
+MY_IPK="enigma2-plugin-extensions-MAC-plugin_v1.0_all.ipk"
 MY_DEB="enigma2-plugin-extensions-MAC-plugin_v1.0_all.deb"
 
 ########################################################################################################################
