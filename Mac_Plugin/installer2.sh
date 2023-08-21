@@ -25,10 +25,12 @@ python_version=$(python -c "import sys; print(sys.version_info[0])")
 
 if [ "$python_version" -eq 2 ]; then
     echo "Python version: $python_version"
+    sleep 4
     MY_IPK="enigma2-plugin-extensions-MAC-plugin_v1.0_all.ipk"
     MY_DEB="enigma2-plugin-extensions-MAC-plugin_v1.0_all.deb"
 else
     echo "Python version: $python_version"
+    sleep 4
     MY_IPK="enigma2-plugin-extensions-MAC-plugin_v1.0_py3.ipk"
     MY_DEB="enigma2-plugin-extensions-MAC-plugin_v1.0_p3.deb"
 
@@ -52,7 +54,7 @@ echo "**                 Devolped For: DREAMWORLD                **"
 echo "**                 SUPPORT     : 03357300604               **"
 echo "************************************************************"
 echo ''
-
+sleep 4
 # Remove previous file (if any)
 rm -f $MY_TMP_FILE > /dev/null 2>&1
 
