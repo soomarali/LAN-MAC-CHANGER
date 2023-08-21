@@ -13,7 +13,9 @@
 PACKAGE_DIR='MAC-Changer/main/Mac_Plugin'
 
 MY_IPK="enigma2-plugin-extensions-MAC-plugin_v1.0_all.ipk"
+MY_IPK2="enigma2-plugin-extensions-MAC-plugin_v1.0_py3.ipk"
 MY_DEB="enigma2-plugin-extensions-MAC-plugin_v1.0_all.deb"
+MY_DEB2="enigma2-plugin-extensions-MAC-plugin_v1.0_py3.deb"
 
 ########################################################################################################################
 # Auto ... Do not change
@@ -22,13 +24,33 @@ MY_DEB="enigma2-plugin-extensions-MAC-plugin_v1.0_all.deb"
 # Decide : which package ?
 MY_MAIN_URL="https://raw.githubusercontent.com/soomarali/"
 if which dpkg > /dev/null 2>&1; then
-	MY_FILE=$MY_DEB
-	MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_DEB
+if python -c 'import sys; exit(0) if sys.version_info.major == 2 else exit(1)'; then
+        MY_FILE=$MY_DEB
+    else
+        MY_FILE=$MY_DEB2
+fi
 else
 	MY_FILE=$MY_IPK
 	MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_IPK
 fi
 MY_TMP_FILE="/tmp/"$MY_FILE
+
+# Function to print Python version
+print_python_version() {
+  python_version=$(python -c 'import sys; print(sys.version.split()[0])')
+  echo "You have Python version $python_version."
+}
+
+# Check Python version
+if python -c 'import sys; exit(0) if sys.version_info.major == 2 else exit(1)'; then
+  MY_FILE=$MY_IPK
+    else
+        MY_FILE=$MY_IPK2
+  print_python_version
+ 
+fi
+
+
 
 echo ''
 echo '************************************************************'
