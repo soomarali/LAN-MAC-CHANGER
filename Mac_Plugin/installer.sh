@@ -1,9 +1,9 @@
 #!/bin/sh
 
 # ==============================================
-# SCRIPT : DOWNLOAD AND INSTALL OSCam SmartCam #
+# SCRIPT : DOWNLOAD AND INSTALL MAC Changer plugin #
 # =====================================================================================================================
-# Command: wget https://raw.githubusercontent.com/soomarali/Download/main/SmartCam/installer.sh -qO - | /bin/sh #
+# Command: wget https://raw.githubusercontent.com/soomarali/MAC-Changer/Mac_Plugin/installer.sh -qO - | /bin/sh #
 # =====================================================================================================================
 
 ########################################################################################################################
