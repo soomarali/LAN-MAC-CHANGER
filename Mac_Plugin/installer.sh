@@ -44,6 +44,7 @@ sleep 4
 MY_MAIN_URL="https://raw.githubusercontent.com/soomarali/"
 if which dpkg > /dev/null 2>&1; then
         MY_FILE=$MY_DEB
+	MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_DEB
 else
 	MY_FILE=$MY_IPK
 	MY_URL=$MY_MAIN_URL$PACKAGE_DIR'/'$MY_IPK
